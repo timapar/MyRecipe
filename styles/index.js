@@ -11,9 +11,12 @@ const styles = StyleSheet.create({
   },
   tiles: {
     flex: 5,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     backgroundColor: '#888',
+  },
+  tileList: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
   },
   button: {
     flex: 1,
@@ -25,7 +28,21 @@ const styles = StyleSheet.create({
     fontSize: 44,
     color: 'white',
   },
-  tile: {},
+  tile: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    width: 200,
+    height: 200,
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  tileText: {
+    fontSize: 32,
+    color: 'purple',
+  },
 });
 
 export default styles;
