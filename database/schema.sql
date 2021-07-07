@@ -12,6 +12,7 @@ CREATE TABLE recipes (
   title VARCHAR ( 64 ),
 	ingredients VARCHAR ( 1024 ),
   instructions VARCHAR ( 2048 ),
+  photo VARCHAR ( 256 ),
   PRIMARY KEY(id),
   CONSTRAINT fk_users
     FOREIGN KEY(users_id)
