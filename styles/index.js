@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
   tiles: {
     flex: 5,
-    backgroundColor: '#888',
+    backgroundColor: '#fcf8f5',
   },
   tileList: {
     flexDirection: 'row',
@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: '#c2332a',
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
     fontSize: 44,
-    color: 'white',
+    color: '#fcf8f5',
   },
   tile: {
     justifyContent: 'center',
@@ -41,13 +41,16 @@ const styles = StyleSheet.create({
   },
   tileText: {
     fontSize: 32,
-    color: 'purple',
+    color: '#c2332a',
     paddingBottom: 20,
     textAlign: 'center',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 10,
+    textShadowColor: '#fcf8f5',
   },
   textInput: {
     fontSize: 26,
-    color: 'cyan',
+    color: '#39393b',
     margin: 20,
     padding: 10,
     borderWidth: 1,
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
   },
   inputLabels: {
     fontSize: 24,
-    color: 'blue',
+    color: '#ec7533',
     paddingLeft: 20,
   },
   loading: {
@@ -70,25 +73,25 @@ const styles = StyleSheet.create({
   },
   recipeTitle: {
     fontSize: 40,
-    color: 'purple',
+    color: '#c2332a',
     margin: 15,
     marginBottom: 0,
   },
   recipeIngredients: {
     fontSize: 22,
-    color: 'black',
+    color: '#39393b',
     margin: 15,
     marginBottom: 0,
   },
   recipeInstructions: {
     fontSize: 22,
-    color: 'black',
+    color: '#39393b',
     margin: 15,
     marginBottom: 0,
   },
   recipeSubtitle: {
     fontSize: 30,
-    color: '#888',
+    color: '#ec7533',
     margin: 15,
     marginBottom: 0,
     textDecorationLine: 'underline',
