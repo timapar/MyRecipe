@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     color: '#fcf8f5',
   },
   tile: {
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     marginTop: 10,
     width: 200,
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   },
   tileText: {
     fontSize: 32,
-    color: '#c2332a',
-    paddingBottom: 20,
+    color: '#f5b43b',
+    paddingBottom: 25,
     textAlign: 'center',
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 10,
-    textShadowColor: '#fcf8f5',
+    textShadowColor: '#39393b',
   },
   textInput: {
     fontSize: 26,

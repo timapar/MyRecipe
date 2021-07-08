@@ -12,7 +12,7 @@ const RecipeTile = (props) => {
     >
       <ImageBackground
         style={styles.tile}
-        source={require('/home/tim/HackReactor/MVP/MyRecipe/assets/default-recipe-big.png')}
+        source={require('/home/tim/HackReactor/MVP/MyRecipe/assets/med-food-hero_1.jpg')}
       >
         <Text style={styles.tileText}>{props.recipe.title}</Text>
       </ImageBackground>
