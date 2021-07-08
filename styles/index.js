@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
   tileText: {
     fontSize: 32,
     color: 'purple',
+    paddingBottom: 20,
+    textAlign: 'center',
   },
   textInput: {
     fontSize: 26,
