@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Text, ScrollView } from 'react-native';
+import axios from 'axios';
 import RecipeTile from './recipeTile';
 import styles from '../styles/';
 
@@ -7,6 +8,7 @@ class RecipeView extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userID: 1,
       recipes: [
         { id: 1, title: 'title 1' },
         { id: 2, title: 'title 2' },
@@ -20,7 +22,18 @@ class RecipeView extends Component {
     };
   }
 
-  componentDidMount() {}
+  getListOfRecipes() {
+    axios
+      .get(`http://192.168.1.7:1337/all-recipes/${this.state.userID}`)
+      .then((result) => this.setState({ recipes: result.data }))
+      .catch((err) => {
+        console.error(err.stack);
+      });
+  }
+
+  componentDidMount() {
+    this.getListOfRecipes();
+  }
 
   render() {
     return (
@@ -32,7 +45,10 @@ class RecipeView extends Component {
             ))}
           </ScrollView>
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Add Recipe')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.props.navigation.navigate('Add Recipe')}
+        >
           <Text style={styles.buttonText}>Add Recipe</Text>
         </TouchableOpacity>
       </View>
