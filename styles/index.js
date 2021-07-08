@@ -43,6 +43,20 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: 'purple',
   },
+  textInput: {
+    fontSize: 26,
+    color: 'cyan',
+    margin: 20,
+    padding: 10,
+    borderWidth: 1,
+    borderRadius: 5,
+    textAlignVertical: 'top',
+  },
+  inputLabels: {
+    fontSize: 24,
+    color: 'blue',
+    paddingLeft: 20,
+  },
 });
 
 export default styles;
