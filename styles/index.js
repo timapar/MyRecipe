@@ -57,6 +57,40 @@ const styles = StyleSheet.create({
     color: 'blue',
     paddingLeft: 20,
   },
+  loading: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  loadingText: {
+    fontSize: 44,
+    color: '#888',
+  },
+  recipeTitle: {
+    fontSize: 40,
+    color: 'purple',
+    margin: 15,
+    marginBottom: 0,
+  },
+  recipeIngredients: {
+    fontSize: 22,
+    color: 'black',
+    margin: 15,
+    marginBottom: 0,
+  },
+  recipeInstructions: {
+    fontSize: 22,
+    color: 'black',
+    margin: 15,
+    marginBottom: 0,
+  },
+  recipeSubtitle: {
+    fontSize: 30,
+    color: '#888',
+    margin: 15,
+    marginBottom: 0,
+    textDecorationLine: 'underline',
+  },
 });
 
 export default styles;
