@@ -20,6 +20,7 @@ class RecipeView extends Component {
         { id: 8, title: 'title 8' },
       ],
     };
+    this.getListOfRecipes = this.getListOfRecipes.bind(this);
   }
 
   getListOfRecipes() {
@@ -32,7 +33,13 @@ class RecipeView extends Component {
   }
 
   componentDidMount() {
-    this.getListOfRecipes();
+    this._unsubscribe = this.props.navigation.addListener('focus', () => {
+      this.getListOfRecipes();
+    });
+  }
+
+  componentWillUnmount() {
+    this._unsubscribe();
   }
 
   render() {
