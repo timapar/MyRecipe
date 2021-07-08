@@ -1,5 +1,10 @@
 const express = require('express');
-const { addNewRecipe, getListOfAllRecipes, getRecipeDetails } = require('../database/models.js');
+const {
+  addNewRecipe,
+  getListOfAllRecipes,
+  getRecipeDetails,
+  deleteRecipe,
+} = require('../database/models.js');
 const app = express();
 const port = process.env.PORT || 1337;
 
@@ -23,6 +28,15 @@ app.get('/recipe/:id', (req, res) => {
     .then((results) => {
       res.status(200).json(results.rows[0]);
     })
+    .catch((err) => {
+      console.error(err.stack);
+      res.sendStatus(500);
+    });
+});
+
+app.delete('/recipe/:id', (req, res) => {
+  deleteRecipe(req.params.id)
+    .then(() => res.sendStatus(200))
     .catch((err) => {
       console.error(err.stack);
       res.sendStatus(500);
