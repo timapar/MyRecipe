@@ -30,3 +30,12 @@ module.exports.addNewRecipe = ({ title, ingredients, instructions }) => {
 
   return pool.query(insertRecipeQryStr);
 };
+
+module.exports.deleteRecipe = (recipeID) => {
+  const deleteRecipeQryStr = `
+    DELETE FROM recipes
+    WHERE id = ${recipeID};
+  `;
+
+  return pool.query(deleteRecipeQryStr);
+};
