@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import styles from '../styles/';
 
@@ -14,10 +14,15 @@ class Recipe extends Component {
       instructions: null,
       photo: null,
     };
+    this.deleteRecipe = this.deleteRecipe.bind(this);
   }
 
   getDetailsOfRecipe(id) {
     return axios.get(`http://192.168.1.7:1337/recipe/${id}`);
+  }
+
+  deleteRecipe(id) {
+    return axios.delete(`http://192.168.1.7:1337/recipe/${id}`);
   }
 
   componentDidMount() {
@@ -41,15 +46,28 @@ class Recipe extends Component {
   render() {
     if (this.state.title) {
       return (
-        <ScrollView>
-          <View style={styles.colContainer}>
-            <Text style={styles.recipeTitle}>{this.state.title}</Text>
-            <Text style={styles.recipeSubtitle}>Ingredients:</Text>
-            <Text style={styles.recipeIngredients}>{this.state.ingredients}</Text>
-            <Text style={styles.recipeSubtitle}>Instructions:</Text>
-            <Text style={styles.recipeInstructions}>{this.state.instructions}</Text>
+        <View style={styles.colContainer}>
+          <View style={styles.tiles}>
+            <ScrollView>
+              <View style={styles.colContainer}>
+                <Text style={styles.recipeTitle}>{this.state.title}</Text>
+                <Text style={styles.recipeSubtitle}>Ingredients:</Text>
+                <Text style={styles.recipeIngredients}>{this.state.ingredients}</Text>
+                <Text style={styles.recipeSubtitle}>Instructions:</Text>
+                <Text style={styles.recipeInstructions}>{this.state.instructions}</Text>
+              </View>
+            </ScrollView>
           </View>
-        </ScrollView>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              this.deleteRecipe(this.state.id);
+              this.props.navigation.navigate('Recipes');
+            }}
+          >
+            <Text style={styles.buttonText}>Delete Recipe</Text>
+          </TouchableOpacity>
+        </View>
       );
     } else {
       return (
