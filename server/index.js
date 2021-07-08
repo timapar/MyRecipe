@@ -20,14 +20,16 @@ app.get('/all-recipes/:uid', (req, res) => {
 
 app.get('/recipe/:id', (req, res) => {
   getRecipeDetails(req.params.id)
-    .then((results) => res.status(200).json(results.rows))
+    .then((results) => {
+      res.status(200).json(results.rows[0]);
+    })
     .catch((err) => {
       console.error(err.stack);
       res.sendStatus(500);
     });
 });
 
-app.post('/recipe', (req, res) => {
+app.post('/new-recipe', (req, res) => {
   addNewRecipe(req.body.data)
     .then(() => res.sendStatus(201))
     .catch((err) => {
