@@ -33,7 +33,7 @@ class AddRecipe extends Component {
   onSubmitRecipe() {
     const data = this.state;
     axios
-      .post('http://192.168.1.7:1337/recipe', { data })
+      .post('http://192.168.1.7:1337/new-recipe', { data })
       .then(() => this.props.navigation.navigate('Recipes'))
       .catch((err) => console.error(err));
   }
@@ -48,7 +48,7 @@ class AddRecipe extends Component {
               <TextInput
                 style={styles.textInput}
                 multiline={true}
-                placeholder="Three bean chili"
+                placeholder="Click here to add your title"
                 onChangeText={this.onChangeTitle}
               />
             </View>
@@ -57,7 +57,7 @@ class AddRecipe extends Component {
               <TextInput
                 style={styles.textInput}
                 multiline={true}
-                placeholder="-1/2 diced yellow onion"
+                placeholder="Click here to add your ingredients"
                 onChangeText={this.onChangeIngredients}
               />
             </View>
@@ -66,7 +66,7 @@ class AddRecipe extends Component {
               <TextInput
                 style={styles.textInput}
                 multiline={true}
-                placeholder="-saute on medium heat until translucent"
+                placeholder="Click here to add your instructions"
                 onChangeText={this.onChangeInstructions}
               />
             </View>
