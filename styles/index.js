@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   tiles: {
-    flex: 5,
+    flex: 7,
     backgroundColor: '#fcf8f5',
   },
   tileList: {
