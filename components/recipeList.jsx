@@ -48,7 +48,7 @@ class RecipeView extends Component {
         <View style={styles.tiles}>
           <ScrollView contentContainerStyle={styles.tileList}>
             {this.state.recipes.map((recipe) => (
-              <RecipeTile recipe={recipe} key={recipe.id} />
+              <RecipeTile recipe={recipe} key={recipe.id} navigation={this.props.navigation} />
             ))}
           </ScrollView>
         </View>
