@@ -61,8 +61,9 @@ class Recipe extends Component {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              this.deleteRecipe(this.state.id);
-              this.props.navigation.navigate('Recipes');
+              this.deleteRecipe(this.state.id)
+                .then(() => this.props.navigation.navigate('Recipes'))
+                .catch((err) => console.error(err.stack));
             }}
           >
             <Text style={styles.buttonText}>Delete Recipe</Text>
