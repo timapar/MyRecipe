@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     marginTop: 10,
-    width: 200,
-    height: 200,
+    width: 180,
+    height: 180,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 180,
+    height: 180,
   },
   tileText: {
     fontSize: 32,
