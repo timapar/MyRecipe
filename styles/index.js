@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   loadingText: {
+    flex: 7,
     fontSize: 44,
     color: '#888',
   },
