@@ -74,7 +74,6 @@ class Recipe extends Component {
       return (
         <View style={styles.loading}>
           <Text style={styles.loadingText}>Loading</Text>
-
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
